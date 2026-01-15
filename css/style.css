@@ -5,7 +5,10 @@ html {
 }
 body {
     color: #cc6633;
-    font-family: serif; 
+    font-family: serif;
+}
+main {
+    padding-top: 60px;
 }
 img {
     max-width: 100%;
@@ -34,10 +37,11 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 18px 0;
 }
 .header .logo {
     max-width: 180px;
-    margin: 14px 0;
+    line-height: 0; /*h1にはデフォで8pxの上下余白(margin)が搭載。消す*/
 }
 .header .logo a {
     display: block;
@@ -76,7 +80,6 @@ a {
     align-items: center;
     background: #f8f6f2; /* 紅茶系の淡い背景 */
     padding: 58px 0px;
-    margin-top: 60px;
   } 
 .fv__inner {
     width: 45%;
@@ -217,21 +220,25 @@ a {
 スマートフォン用
 --------------------------------------*/
 @media screen and (max-width: 767px) {
+    .wrapper {
+        width: 90%;
+    }
     .section-title {
         font-size: 25px;
         margin-bottom: 30px;
     }
     .header .logo {
-        max-width: 120px;
+        max-width: 100px;
     }
     .header li {
-        font-size: 14px;
+        font-size: 12px;
         margin-left: 10px;
     }
 
     .fv {
         flex-direction: column-reverse;
         margin-top: 0;
+        padding: 0;
     }
     .fv__inner {
         width: 100%;
@@ -246,11 +253,14 @@ a {
         text-align: center;
     }
     .fv__title {
-        font-size: 28px;
+        font-size: 24px;
+    }
+    .fv__lead {
+        font-size: 12px;
     }
 
     .concept {
-        padding: 60px 0;
+        padding: 80px 0;
     }
     .concept p {
         font-size: 0.9rem;
@@ -267,6 +277,13 @@ a {
         grid-template-columns: repeat(2,1fr);
         gap: 16px;
     }
+    .tea-card {
+        padding: 20px 0;
+    }
+    .tea-card p {
+        font-size: 0.9rem;
+        padding-top: 4px;
+    }
     .price__inner {
         flex-direction: column;
     }
@@ -281,7 +298,9 @@ a {
     .price__info {
         margin-left: 0;
     }
-
+    .price__amount {
+        font-size: 28px;
+    }
     .footer {
         font-size: 0.6rem;
         padding: 16px 0;
